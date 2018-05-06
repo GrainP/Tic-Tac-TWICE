@@ -1,0 +1,192 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="UFT-8">
+	<title>Tic Tac Toe</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript" src="script.js"></script>
+
+	<style>
+		html {
+			font-family: 'Roboto', sans-serif;
+			font-weight: 400;
+			font-size: 12px;
+		}
+
+		.container {
+			margin: 2em auto;
+			text-align: center;
+		}
+
+		h1{
+			margin: auto;
+			box-sizing: border-box;
+			margin-top: 2vh;
+			margin-bottom: 2vh;
+		}
+		#ticspace > p{
+			margin: auto;
+			box-sizing: border-box;
+			position:relative;
+		}
+
+		#start{
+			font-size: 2vh;
+		}
+
+		#playerscore{
+			float: left;
+		}
+
+		#cpuscore{
+			float: right;
+		}
+
+		#game {
+			display: flex;
+			margin: auto;
+			flex-wrap: wrap;
+		}
+
+		#start>button {
+			width: 5em;
+			height: 2em;
+			border: #FF5FA2 solid;
+			margin: auto;
+			margin-top: 0%;
+			margin-bottom: 1em;
+			font-size: 2em;
+			display: block;
+			background-color: #FEC99A;
+		}
+		#tttgame{
+			margin: auto;
+		}
+
+		header {
+			border: #FEC99A solid 2vh;
+			font-size: 5vh;
+			display: block;
+			margin-bottom: 2vh;
+		}
+
+		div{
+			margin: auto;
+		}
+
+		#resetbutton {
+			width: 7em;
+			height: auto;
+			margin: auto;
+			margin-top: 2vh;
+			margin-bottom: 2vh;
+			cursor: pointer;
+			border: #FF5FA2 solid;
+			box-sizing: border-box;
+			background-color: #FF5FA2;
+			font-size: 200%;
+			color: #fff;
+		}
+
+		.tic-tac-toe,
+		.puzzle {
+			width: 315px;
+			height: auto;
+			margin: 0 auto;
+			position: relative;
+		}
+
+		.tile,
+		.square {
+			height: 100px;
+			width: 100px;
+			display: inline-block;
+			position: relative;
+			vertical-align: top;
+			padding: 15px;
+			margin-bottom: 5px;
+			box-sizing: border-box;
+			color: #fff;
+			font-size: 5em;
+		}
+
+		.tile {
+			cursor: pointer;
+		}
+
+		.open {
+			background-color: #2D2D2D;
+		}
+		.off {
+			background-color: #FEC99A;
+		}
+
+		.CPU {
+			background-color: #FF5FA2;
+		}
+
+		.Player {
+			background-color: #FEC99A;
+		}
+
+		#tile{
+			background-image: none;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div class="container">
+		<header>Tic-Tac-TWICE</header>
+		<div id="start">
+			<p>Tic-tac-toe is a game where you have place three of their marks in a horizontal, vertical, or diagonal row to win.</p>
+			<p>You play as X and the CPU plays as O.</p>
+			<p></p>
+			<p>Every time you get a point, you will unlock a piece to the picture set.</p>
+			<button id="button">Play</button>
+		</div>
+		<div id="game">
+			<div id="ticspace">
+			<div class="tic-tac-toe">
+				<div id="square1" class="tile open"></div>
+				<div id="square2" class="tile open"></div>
+				<div id="square3" class="tile open"></div>
+				<div id="square4" class="tile open"></div>
+				<div id="square5" class="tile open"></div>
+				<div id="square6" class="tile open"></div>
+				<div id="square7" class="tile open"></div>
+				<div id="square8" class="tile open"></div>
+				<div id="square9" class="tile open"></div>
+			</div>
+			<h1 id ="playerscore"></h1>
+			<button id="resetbutton">Reset board</button>
+			<h1 id ="cpuscore"></h1>
+			<p id ="playerscore">Total Player</p>
+			<p id ="cpuscore">Total CPU</p>
+		</div>
+
+			<div class="puzzle">
+				<div id="tile1" class="square off"></div>
+				<div id="tile2" class="square off"></div>
+				<div id="tile3" class="square off"></div>
+				<div id="tile4" class="square off"></div>
+				<div id="tile5" class="square off"></div>
+				<div id="tile6" class="square off"></div>
+				<div id="tile7" class="square off"></div>
+				<div id="tile8" class="square off"></div>
+				<div id="tile9" class="square off"></div>
+			</div>
+
+
+
+		</div>
+	</div>
+</body>
+
+</html>
