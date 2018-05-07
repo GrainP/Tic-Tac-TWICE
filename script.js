@@ -1,4 +1,3 @@
-
 $(document).ready(function () {
 	$("div#extra").removeClass("hidden");
 	$('#game').hide();
