@@ -1,4 +1,7 @@
+
 $(document).ready(function () {
+	$("div#extra").removeClass("hidden");
+	$('#game').hide();
 
 	var tile1 = $('#square1');
 	var tile2 = $('#square2');
@@ -14,7 +17,7 @@ $(document).ready(function () {
 	var win = false;
 	var scorePlayer = 0;
 
-	if (localStorage.getItem(scorePlayer) === null) {
+	if (localStorage.getItem("tictacplayerscore") === null) {
 
 		var highscore = 0;
 		var cpuhighscore = 0;
@@ -32,13 +35,9 @@ $(document).ready(function () {
 	$("#playerscore").html(String(highscore));
 	$("#cpuscore").html(String(cpuhighscore));
 
-	$('#game').hide();
-	$('#resetbutton').hide();
-
 	$("#button").click(function () {
 		$("#game").slideDown("slow", clearBoard());
 		$('#button').slideUp(("fast"));
-		$("#resetbutton").slideDown("slow");
 	})
 
 	function validatePlay(squareplayed) {
@@ -369,13 +368,4 @@ $(document).ready(function () {
 		}
 
 	})
-
-	$('#resetbutton').click(function () {
-		clearBoard();
-		highscore--;
-		keepscore();
-	})
-
-
-
 });
