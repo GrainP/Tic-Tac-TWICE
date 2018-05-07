@@ -1,0 +1,26 @@
+{
+  "short_name": "Tic-Tac-TWICE",
+  "name": "Tic-Tac-Toe TWICE version",
+  "display": "standalone",
+  "theme_color": "#fff",
+  "background_color": "#FEC99A",
+
+  "icons": [
+    {
+      "src": "launcher-icon-1x.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "launcher-icon-2x.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "launcher-icon-4x.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ],
+  "start_url": "index.html?launcher=true"
+}
