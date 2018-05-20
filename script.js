@@ -1,3 +1,4 @@
+
 $(document).ready(function () {
 	$("div#extra").removeClass("hidden");
 	$('#game').hide();
@@ -48,15 +49,86 @@ $(document).ready(function () {
 		}
 	}
 
-	function clearBoard() {
-		$('.tile').removeClass('occupied');
-		$('.tile').removeClass('CPU');
-		$('.tile').removeClass('Player');
-		$('.tile').html('');
-		$('.tile').addClass('open');
+	$('.tile').on('click', function PlayerPlay() {
+
+		validatePlay(this);
+
+		if (canPlay) {
+			$(this).removeClass('open');
+			$(this).addClass('occupied');
+			$(this).html("X");
+			$(this).addClass('Player');
+
+			draw();
+
+			winner()
+			CPUTurn();
+
+		} else {
+			alert("That location is already occupied, please choose another one.");
+		}
+	})
+
+	function draw() {
+
+		if (!($('.tile').hasClass('open'))) {
+			alert("Draw! Try again!");
+			clearBoard();
+		}
 	}
 
-	function winAlert(player) {
+	function winner() {
+
+		if (tile1.hasClass('Player') && tile2.hasClass('Player') && tile3.hasClass('Player')) {
+			winNotif("X");
+		} else if (tile1.hasClass('CPU') && tile2.hasClass('CPU') && tile3.hasClass('CPU')) {
+			winNotif("O");
+		}
+
+		else if (tile4.hasClass('Player') && tile5.hasClass('Player') && tile6.hasClass('Player')) {
+			winNotif("X");
+		} else if (tile4.hasClass('CPU') && tile5.hasClass('CPU') && tile6.hasClass('CPU')) {
+			winNotif("O");
+		}
+
+		else if (tile7.hasClass('Player') && tile8.hasClass('Player') && tile9.hasClass('Player')) {
+			winNotif("X");
+		} else if (tile7.hasClass('CPU') && tile8.hasClass('CPU') && tile9.hasClass('CPU')) {
+			winNotif("O");
+		}
+
+		else if (tile1.hasClass('Player') && tile4.hasClass('Player') && tile7.hasClass('Player')) {
+			winNotif("X");
+		} else if (tile1.hasClass('CPU') && tile4.hasClass('CPU') && tile7.hasClass('CPU')) {
+			winNotif("O");
+		}
+
+		else if (tile5.hasClass('Player') && tile2.hasClass('Player') && tile8.hasClass('Player')) {
+			winNotif("X");
+		} else if (tile5.hasClass('CPU') && tile2.hasClass('CPU') && tile8.hasClass('CPU')) {
+			winNotif("O");
+		}
+
+		else if (tile6.hasClass('Player') && tile9.hasClass('Player') && tile3.hasClass('Player')) {
+			winNotif("X");
+		} else if (tile6.hasClass('CPU') && tile9.hasClass('CPU') && tile3.hasClass('CPU')) {
+			winNotif("O");
+		}
+
+		else if (tile1.hasClass('Player') && tile5.hasClass('Player') && tile9.hasClass('Player')) {
+			winNotif("X");
+		} else if (tile1.hasClass('CPU') && tile5.hasClass('CPU') && tile9.hasClass('CPU')) {
+			winNotif("O");
+		}
+
+		else if (tile5.hasClass('Player') && tile7.hasClass('Player') && tile3.hasClass('Player')) {
+			winNotif("X");
+		} else if (tile5.hasClass('CPU') && tile7.hasClass('CPU') && tile3.hasClass('CPU')) {
+			winNotif("O");
+		}
+	}
+
+	function winNotif(player) {
 		win = true;
 		if (player == "X") {
 			alert("You win!");
@@ -77,57 +149,13 @@ $(document).ready(function () {
 		clearBoard();
 	}
 
-	function checkWin() {
-
-		if (tile1.hasClass('Player') && tile2.hasClass('Player') && tile3.hasClass('Player')) {
-			winAlert("X");
-		} else if (tile1.hasClass('CPU') && tile2.hasClass('CPU') && tile3.hasClass('CPU')) {
-			winAlert("O");
-		}
-
-		else if (tile4.hasClass('Player') && tile5.hasClass('Player') && tile6.hasClass('Player')) {
-			winAlert("X");
-		} else if (tile4.hasClass('CPU') && tile5.hasClass('CPU') && tile6.hasClass('CPU')) {
-			winAlert("O");
-		}
-
-		else if (tile7.hasClass('Player') && tile8.hasClass('Player') && tile9.hasClass('Player')) {
-			winAlert("X");
-		} else if (tile7.hasClass('CPU') && tile8.hasClass('CPU') && tile9.hasClass('CPU')) {
-			winAlert("O");
-		}
-
-		else if (tile1.hasClass('Player') && tile4.hasClass('Player') && tile7.hasClass('Player')) {
-			winAlert("X");
-		} else if (tile1.hasClass('CPU') && tile4.hasClass('CPU') && tile7.hasClass('CPU')) {
-			winAlert("O");
-		}
-
-		else if (tile5.hasClass('Player') && tile2.hasClass('Player') && tile8.hasClass('Player')) {
-			winAlert("X");
-		} else if (tile5.hasClass('CPU') && tile2.hasClass('CPU') && tile8.hasClass('CPU')) {
-			winAlert("O");
-		}
-
-		else if (tile6.hasClass('Player') && tile9.hasClass('Player') && tile3.hasClass('Player')) {
-			winAlert("X");
-		} else if (tile6.hasClass('CPU') && tile9.hasClass('CPU') && tile3.hasClass('CPU')) {
-			winAlert("O");
-		}
-
-		else if (tile1.hasClass('Player') && tile5.hasClass('Player') && tile9.hasClass('Player')) {
-			winAlert("X");
-		} else if (tile1.hasClass('CPU') && tile5.hasClass('CPU') && tile9.hasClass('CPU')) {
-			winAlert("O");
-		}
-
-		else if (tile5.hasClass('Player') && tile7.hasClass('Player') && tile3.hasClass('Player')) {
-			winAlert("X");
-		} else if (tile5.hasClass('CPU') && tile7.hasClass('CPU') && tile3.hasClass('CPU')) {
-			winAlert("O");
-		}
+	function clearBoard() {
+		$('.tile').removeClass('occupied');
+		$('.tile').removeClass('CPU');
+		$('.tile').removeClass('Player');
+		$('.tile').html('');
+		$('.tile').addClass('open');
 	}
-
 
 	function enableTile() {
 		var tilez = '#tile' + scorePlayer;
@@ -198,14 +226,6 @@ $(document).ready(function () {
 		}
 	}
 
-	function checkDraw() {
-
-		if (!($('.tile').hasClass('open'))) {
-			alert("Draw! Try again!");
-			clearBoard();
-		}
-	}
-
 	function CPUTurn() {
 
 		function CPUTurnPlay(square) {
@@ -215,14 +235,15 @@ $(document).ready(function () {
 			if (canPlay) {
 				square.removeClass('open');
 				square.addClass('occupied');
-				square.addClass('CPU');
 				square.html("O");
+				square.addClass('CPU');
+
 			} else {
-				Orandomplay()
+				CPURandom()
 			}
 		}
 
-		function Orandomplay() {
+		function CPURandom() {
 			for (var i = 0; i < 10; i++) {
 
 				var randomNumber = Math.floor((Math.random() * 9) + 1);
@@ -233,8 +254,9 @@ $(document).ready(function () {
 
 					randomSquare.removeClass('open');
 					randomSquare.addClass('occupied');
-					randomSquare.addClass('CPU');
 					randomSquare.html("O");
+					randomSquare.addClass('CPU');
+					
 					break;
 				}
 			}
@@ -271,10 +293,6 @@ $(document).ready(function () {
 		PlayTile573_wo3 = (tile5.hasClass('Player') && tile7.hasClass('Player') || tile5.hasClass('CPU') && tile7.hasClass('CPU')) && !(tile3.hasClass('occupied'))
 		PlayTile573_wo5 = (tile5.hasClass('Player') && tile3.hasClass('Player') || tile5.hasClass('CPU') && tile3.hasClass('CPU')) && !(tile5.hasClass('occupied'))
 		PlayTile573_wo7 = (tile7.hasClass('Player') && tile3.hasClass('Player') || tile7.hasClass('CPU') && tile3.hasClass('CPU')) && !(tile7.hasClass('occupied'))
-
-
-
-		//CPU Win with tiles
 
 		if (PlayTile123_wo3) {
 			CPUTurnPlay(tile3)
@@ -341,30 +359,9 @@ $(document).ready(function () {
 		}
 
 		else {
-			Orandomplay();
+			CPURandom();
 		}
-		checkDraw();
-		checkWin();
+		draw();
+		winner();
 	}
-
-	$('.tile').on('click', function Xplay() {
-
-		validatePlay(this);
-
-		if (canPlay) {
-			$(this).removeClass('open');
-			$(this).addClass('occupied');
-			$(this).addClass('Player');
-			$(this).html("X");
-
-			checkDraw();
-
-			checkWin()
-			CPUTurn();
-
-		} else {
-			alert("That location is already occupied, please choose another one.");
-		}
-
-	})
 });

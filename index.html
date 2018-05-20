@@ -4,125 +4,19 @@
 <head>
 	<meta charset="UFT-8">
 	<title>Tic-Tac-TWICE</title>
-
+	<meta name="theme-color" content="FEC99A">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link rel="apple-touch-icon" href="touch-icon-iphone.png">
+	<link rel="apple-touch-icon" sizes="48x48" href="launcher-icon-1x.png">
+	<link rel="apple-touch-icon" sizes="96x96" href="launcher-icon-2x.png">
+	<link rel="apple-touch-icon" sizes="192x192" href="launcher-icon-4x.png">
+
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script type="text/javascript" src="script.js"></script>
-	<link rel="manifest" href="manifest.json">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link href="stylesheet.css" rel="stylesheet">
 
-	<style>
-		html {
-			font-family: 'Roboto', sans-serif;
-			font-weight: 400;
-			font-size: 12px;
-			text-align: center;
-		}
-
-		header {
-			border: #FEC99A solid 2vh;
-			font-size: 5vh;
-			display: block;
-			margin-bottom: 2vh;
-		}
-
-		#start {
-			font-size: 2vh;
-		}
-
-		#start>button {
-			width: 5em;
-			height: 2em;
-			border: #FF5FA2 solid;
-			margin: auto;
-			margin-top: 0%;
-			margin-bottom: 1em;
-			font-size: 2em;
-			display: block;
-			background-color: #FEC99A;
-		}
-
-		.hidden{
-			display:none;
-		}
-
-		#game {
-			display: flex;
-			margin: auto;
-			flex-wrap: wrap;
-		}
-
-		div {
-			margin: auto;
-		}
-
-		.tic-tac-toe,
-		.puzzle {
-			display: grid;
-			grid-template-columns: 33% 33% 33%;
-			height: auto;
-		}
-
-		.tile,
-		.square {
-			height: 15vh;
-			width: 15vh;
-			display: inline-block;
-			position: relative;
-			vertical-align: top;
-			padding: 20%;
-			margin: 0.5vh;
-			box-sizing: border-box;
-			color: #fff;
-			font-size: 8vh;
-		}
-
-		#ticspace>p {
-			margin: auto;
-			box-sizing: border-box;
-			position: relative;
-		}
-
-		h1 {
-			margin: auto;
-			box-sizing: border-box;
-			margin-top: 2vh;
-			margin-bottom: 2vh;
-		}
-
-		#playerscore {
-			float: left;
-		}
-
-		#cpuscore {
-			float: right;
-		}
-
-		.tile {
-			cursor: pointer;
-		}
-
-		.open {
-			background-color: #2D2D2D;
-		}
-
-		.off {
-			background-color: #FEC99A;
-		}
-
-		.CPU {
-			background-color: #FF5FA2;
-		}
-
-		.Player {
-			background-color: #FEC99A;
-		}
-
-		#tile {
-			background-image: none;
-		}
-	</style>
 </head>
 
 <body>
@@ -131,7 +25,7 @@
 		<p>Tic-tac-toe is a game where you have place three of their marks in a horizontal, vertical, or diagonal row to win.
 			<br> You play as X and the CPU plays as O.
 			<br> Try and complete the TWICE picture set
-			<br> Every time you get a point, you unlock a piece of theset.</p>
+			<br> Every time you get a point, you unlock a piece of the set.</p>
 		<button id="button">Play</button>
 	</div>
 	<div id="extra" class="hidden">
@@ -168,5 +62,16 @@
 		</div>
 	</div>
 </body>
+
+<script>
+	if ('serviceWorker' in navigator) {
+	  navigator.serviceWorker.register('service-worker.js')
+		.then(function(reg){
+		  console.log("Yes");
+		}).catch(function(err) {
+		  console.log(err)
+		});
+	}
+  </script>
 
 </html>

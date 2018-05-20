@@ -1,8 +1,9 @@
 {
-  "short_name": "Tic-Tac-TWICE",
+  "start_url": "/?utm_source=homescreen",
+  "short_name": "TicTacTWICE",
   "name": "Tic-Tac-Toe TWICE version",
   "display": "standalone",
-  "theme_color": "#fff",
+  "theme_color": "#FEC99A",
   "background_color": "#FEC99A",
 
   "icons": [
@@ -21,6 +22,5 @@
       "type": "image/png",
       "sizes": "192x192"
     }
-  ],
-  "start_url": "index.html?launcher=true"
+  ]
 }

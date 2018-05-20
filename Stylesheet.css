@@ -1,0 +1,110 @@
+
+		html {
+			font-family: 'Roboto', sans-serif;
+			font-weight: 400;
+			font-size: 2.5vh;
+			text-align: center;
+		}
+
+		header {
+			border: #FEC99A solid 2vh;
+			font-size: 5vh;
+			display: block;
+			margin-bottom: 2vh;
+		}
+
+		#start {
+			font-size: 2.5vh;
+		}
+
+		#start>button {
+			width: 5em;
+			height: 2em;
+			border: #FF5FA2 solid;
+			margin: auto;
+			margin-top: 0%;
+			margin-bottom: 1em;
+			font-size: 2em;
+			display: block;
+			background-color: #FEC99A;
+		}
+
+		.hidden {
+			display: none;
+		}
+
+		#game {
+			display: flex;
+			margin: auto;
+			flex-wrap: wrap;
+		}
+
+		div {
+			margin: auto;
+		}
+
+		.tic-tac-toe,
+		.puzzle {
+			display: grid;
+			grid-template-columns: 33% 33% 33%;
+			height: auto;
+		}
+
+		.tile,
+		.square {
+			height: 15vh;
+			width: 15vh;
+			display: inline-block;
+			position: relative;
+			vertical-align: top;
+			padding: 20%;
+			margin: 0.5vh;
+			box-sizing: border-box;
+			color: #fff;
+			font-size: 8vh;
+		}
+
+		#ticspace>p {
+			margin: auto;
+			box-sizing: border-box;
+			position: relative;
+		}
+
+		h1 {
+			margin: auto;
+			box-sizing: border-box;
+			margin-top: 2vh;
+			margin-bottom: 2vh;
+		}
+
+		#playerscore {
+			float: left;
+		}
+
+		#cpuscore {
+			float: right;
+		}
+
+		.tile {
+			cursor: pointer;
+		}
+
+		.open {
+			background-color: #2D2D2D;
+		}
+
+		.off {
+			background-color: #FEC99A;
+		}
+
+		.CPU {
+			background-color: #FF5FA2;
+		}
+
+		.Player {
+			background-color: #FEC99A;
+		}
+
+		#tile {
+			background-image: none;
+		}
